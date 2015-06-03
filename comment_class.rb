@@ -7,12 +7,6 @@ class Comment
 	@@comment = []
 
 	def initialize(comment, date)
-		begin 
-			raise ObjectTypeError if (comment == nil || date == nil)
-		rescue ArgumentError
-			puts "You should have two arguments."
-		end
-		# raise ObjectTypeError.new("Date argument should be an integer.") if !(date.is_a? Integer)
 		@comment = comment
 		@date = date
 		@@comment << @comment

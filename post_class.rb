@@ -12,7 +12,7 @@ class Post
 		@comments = []
 	end
 
-	def add_comment(comment_object)						# takes a Comment object as its input and adds it to the comment list.
+	def add_comment(comment_object)
 		raise ObjectTypeError, "Please provide an object of class Comment." if !(comment_object.is_a? Comment)
 		@comments << comment_object
 	end

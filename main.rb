@@ -33,7 +33,15 @@ end
 puts Comment.all_comments
 
 # 4. Add comment to post
-comment = Comment.new(post_comments[0])
+
+		begin 
+			raise ObjectTypeError if (comment == nil || date == nil)
+		rescue ArgumentError
+			puts "You should have two arguments."
+		end
+
+
+comment = Comment.new(post_comments[0], 5)
 new_post.add_comment(comment)
 puts new_post.comments.inspect.colorize(:blue)
 
